@@ -1,10 +1,11 @@
 <head>{{header}}</head>
 <h1>{{header}}</h1>
-<input type="text">
-<button type="button">Add</button>
+<input type="text" #task/>
+<button type="button" (click)="addItem(task.value)">Add</button>
 <hr>
 <ul>
-  <li *ngFor="let item of items">
+  <li *ngFor="let item of list">
     {{item.name}}
+    <button (click)="removeItem(item.id)">X</button>
   </li>
 </ul>
