@@ -7,13 +7,13 @@ import { v4 as uuidv4 } from 'uuid';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  header = 'Todo List';
   list:any[]=[];
 
   addItem(item:string){
     this.list.push({
       id: uuidv4(),
-      name: item
+      name: item,
+      isFinished: false
     });
   }
 

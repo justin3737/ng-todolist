@@ -1,11 +1,26 @@
-<head>{{header}}</head>
-<h1>{{header}}</h1>
-<input type="text" #task/>
-<button type="button" (click)="addItem(task.value)">Add</button>
-<hr>
-<ul>
-  <li *ngFor="let item of list">
-    {{item.name}}
-    <button (click)="removeItem(item.id)">X</button>
-  </li>
-</ul>
+<div class="flex justify-center">
+  <img class="inline-block my-10" src="../assets/brandname.png"/>
+</div>
+<div class="h-[520px] mx-auto w-[500px] xs:w-[90%]">
+  <div class="flex w-full h-[47px] bg-white rounded-md place-content-between content-center " >
+    <input type="text" #task class="w-[455px] h-[45px] rounded-md text-lg p-[10px]"/>
+    <button type="button" (click)="addItem(task.value)"
+      class="bg-gray-800 w-[40px] h-[40px] m-[4px] rounded-md">
+      <img src="../assets/icon_add.png" class="m-auto"/>
+    </button>
+  </div>
+  <div class="w-full h-fll mt-[20px]">
+    <div *ngIf="list.length === 0">
+      <div class="text-center py-[20px]">目前沒有待辦清單</div>
+      <img class="block mx-auto pb-[30px]" src="../assets/bg_empty.png">
+    </div>
+    <div *ngIf="list.length !== 0" class="bg-white shadow-lg rounded-md">
+      <ul>
+        <li *ngFor="let item of list">
+          {{item.name}}
+          <button (click)="removeItem(item.id)">X</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
