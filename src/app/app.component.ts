@@ -7,6 +7,11 @@ import { v4 as uuidv4 } from 'uuid';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  ngOnInit() {
+    document
+      .querySelectorAll<HTMLElement>('.def-btn')
+      .forEach(node => node.click())
+  }
   list:any[]=[];
 
   addItem(item:string){

@@ -3,18 +3,41 @@
 </div>
 <div class="h-[520px] mx-auto w-[500px] xs:w-[90%]">
   <div class="flex w-full h-[47px] bg-white rounded-md place-content-between content-center " >
-    <input type="text" #task class="w-[455px] h-[45px] rounded-md text-lg p-[10px]"/>
+    <input type="text" #task class="w-[455px] h-[45px] rounded-md text-lg p-[10px]"
+      placeholder="新增待辦事項"/>
     <button type="button" (click)="addItem(task.value)"
       class="bg-gray-800 w-[40px] h-[40px] m-[4px] rounded-md">
       <img src="../assets/icon_add.png" class="m-auto"/>
     </button>
   </div>
   <div class="w-full h-fll mt-[20px]">
-    <div *ngIf="list.length === 0">
+    <div *ngIf="list.length !== 0">
       <div class="text-center py-[20px]">目前沒有待辦清單</div>
       <img class="block mx-auto pb-[30px]" src="../assets/bg_empty.png">
     </div>
-    <div *ngIf="list.length !== 0" class="bg-white shadow-lg rounded-md">
+    <div *ngIf="list.length === 0" class="bg-white shadow-lg rounded-md">
+      <div class="flex">
+        <div class="w-1/3 flex">
+          <button
+            class="w-full h-[50px] text-center border-b-2 border-solid border-b-gray-800
+            text-gray-800">
+            全部</button>
+        </div>
+        <div class="w-1/3 flex">
+          <button
+            class="w-full h-[50px] text-center border-b-2 border-solid border-b-gray-200
+            focus:border-b-gray-800 active:border-b-gray-800
+            text-gray-200 focus:text-gray-800 active:text-gray-800">
+          待完成</button>
+        </div>
+        <div class="w-1/3 flex">
+          <button
+            class="w-full h-[50px] text-center border-b-2 border-solid border-b-gray-200
+            focus:border-b-gray-800 active:border-b-gray-800
+            text-gray-200 focus:text-gray-800 active:text-gray-800">
+          已完成</button>
+        </div>
+      </div>
       <ul>
         <li *ngFor="let item of list">
           {{item.name}}
