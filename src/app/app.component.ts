@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { List } from '../app/model/list';
+import { Task } from './model/task';
 import { v4 as uuidv4 } from 'uuid';
 import { TaskStatus } from '../app/enum/enum';
 
@@ -7,17 +7,18 @@ import { TaskStatus } from '../app/enum/enum';
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent {
-  ngOnInit() {
-    document
-      .querySelectorAll<HTMLElement>('.def-btn')
-      .forEach(node => node.click())
-  }
 
-  list : List[];
+export class AppComponent {
+  // ngOnInit() {
+  //   document
+  //     .querySelectorAll<HTMLElement>('.def-btn')
+  //     .forEach(node => node.click())
+  // }
+
+  tasks : Task[];
 
   constructor(){
-    this.list = [
+    this.tasks = [
       {
         id: uuidv4(),
         title: 'Learn Angular',
@@ -31,7 +32,7 @@ export class AppComponent {
   }
 
   addItem(item:String){
-    this.list.push({
+    this.tasks.push({
       id: uuidv4(),
       title: item,
        status: TaskStatus.Active

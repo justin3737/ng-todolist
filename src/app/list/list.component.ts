@@ -1,4 +1,6 @@
-import { Component,  Input, Output, EventEmitter } from '@angular/core';
+import { Component,  Input } from '@angular/core';
+import { TaskStatus } from '../enum/enum';
+import { Task } from '../model/task';
 
 @Component({
   selector: 'list-component',
@@ -6,11 +8,18 @@ import { Component,  Input, Output, EventEmitter } from '@angular/core';
 })
 
 export class ListComponent {
-  @Input() list: any;
-  @Output() remove = new EventEmitter();
+  @Input() tasks: any;
 
-  @Output() removeItem(id:number){
-    console.log(id)
+  changeStatus(task : Task){
+    if(task.status == TaskStatus.Active){
+      task.status = TaskStatus.Done;
+    } else {
+      task.status = TaskStatus.Active;
+    }
+  }
+
+  removeItem(item: object){
+    console.log(item)
     //this.list.filter(item => item.id !== id);
   }
 }
