@@ -5,8 +5,8 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    screen: {
-      'xs': {'max':'480px'}
+    screens: {
+      'xs': {'max':'640px'}
     },
     extend: {
     },

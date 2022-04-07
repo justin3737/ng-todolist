@@ -12,7 +12,16 @@ export class AppComponent {
       .querySelectorAll<HTMLElement>('.def-btn')
       .forEach(node => node.click())
   }
-  list:any[]=[];
+  list:any[]=[
+    {
+      id: 1234,
+      name: 'Learn Angular',
+    },
+    {
+      id: 5678,
+      name: 'Learn Angular, Learn Angular, Learn Angular, Learn Angular, Learn Angular, Learn Angular',
+    }
+  ];
 
   addItem(item:string){
     this.list.push({

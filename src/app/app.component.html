@@ -41,10 +41,11 @@
       <div class="h-[400px]">
         <ul>
           <li *ngFor="let item of list"
-            class="h-[52px] ml-[24px] mr-[48px] leading-[51px] border-solid border-b-[1px] border-b-gray-200">
-            <span class="pt-[10px]">{{item.name}}</span>
+            class="flex justify-between ml-[24px] mr-[48px] leading-[51px] border-solid border-b-[1px] border-b-gray-200 cursor-pointer">
+            <i class="mt-[25px] w-[20px] h-[20px] border-[1px] border-solid border-gray-300 rounded-[5px]"></i>
+            <span class="pt-[10px] ml-[10px] w-full text-left text-ellipsis overflow-hidden whitespace-nowrap">{{item.name}}</span>
             <button (click)="removeItem(item.id)"
-              class="w-[40px] h-[40px] mr-[-40px] float-right mt-[10px]">
+              class="w-[40px] mr-[-40px] mt-[10px]">
               <img src="../assets/icon_x.png" alt="" class="m-auto"></button>
           </li>
         </ul>
