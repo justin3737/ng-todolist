@@ -3,9 +3,9 @@
 </div>
 <div class="h-[520px] mx-auto w-[500px] xs:w-[90%]">
   <div class="flex w-full h-[47px] bg-white rounded-md place-content-between content-center " >
-    <input type="text" #task class="w-full rounded-md text-lg p-[10px]"
+    <input type="text" name="task" #task class="w-full rounded-md text-lg p-[10px]"
       placeholder="新增待辦事項"/>
-    <button type="button" (click)="addItem(task.value)"
+    <button type="button" (click)="addItem(task.value); task.value=''"
       class="bg-gray-800 w-[40px] min-w-[40px] m-[4px] rounded-md">
       <img src="../assets/icon_add.png" class="m-auto"/>
     </button>

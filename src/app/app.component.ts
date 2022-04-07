@@ -13,27 +13,17 @@ export class AppComponent {
   currentTabId: number = 0;
 
   constructor(){
-    this.tasks = [
-      {
-        id: uuidv4(),
-        title: 'Learn Angular',
-        status: TaskStatus.Active
-      },
-      {
-        id: uuidv4(),
-        title: 'Learn Angular, Learn Angular, Learn Angular, Learn Angular, Learn Angular, Learn Angular',
-        status: TaskStatus.Active
-    }];
+    this.tasks = [];
   }
 
   getCurrId(tabID: number) {
     this.currentTabId = tabID;
   }
 
-  addItem(item:String){
+  addItem(task:String){
     this.tasks.push({
       id: uuidv4(),
-      title: item,
+      title: task,
        status: TaskStatus.Active
     });
   }
