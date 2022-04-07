@@ -9,12 +9,6 @@ import { TaskStatus } from '../app/enum/enum';
 })
 
 export class AppComponent {
-  // ngOnInit() {
-  //   document
-  //     .querySelectorAll<HTMLElement>('.def-btn')
-  //     .forEach(node => node.click())
-  // }
-
   tasks : Task[];
 
   constructor(){
@@ -38,8 +32,4 @@ export class AppComponent {
        status: TaskStatus.Active
     });
   }
-
-  // removeItem(id:number){
-  //   this.list = this.list.filter(item => item.id !== id);
-  // }
 }
