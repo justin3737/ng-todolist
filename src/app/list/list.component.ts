@@ -1,5 +1,5 @@
 import { Component,  Input } from '@angular/core';
-import { TaskStatus } from '../enum/enum';
+import { TaskStatus, TaskName } from '../enum/enum';
 import { Task } from '../model/task';
 
 @Component({
@@ -13,12 +13,11 @@ export class ListComponent {
   @Input() currentTabId!: number;
 
   taskfilter(tasks: any): any {
-    let status = ['', 'active', 'done'];
     let arr = tasks.filter((task: any) => {
       if (this.currentTabId === 0){
         return task;
       } else {
-        return task.status === status[this.currentTabId];
+        return task.status === this.currentTabId;
       }
     });
     return arr;
@@ -30,6 +29,10 @@ export class ListComponent {
     } else {
       task.status = TaskStatus.Active;
     }
+  }
+
+  getStatusName(task: Task) {
+    return TaskName[task.status];
   }
 
   removeTask(task: Task){
