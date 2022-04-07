@@ -3,6 +3,6 @@ const enum TaskStatus {
   Done = 2
 }
 
-const TaskName = ['all','active','done'];
+const StatusName = ['all','active','done'];
 
-export { TaskStatus, TaskName }
+export { TaskStatus, StatusName }
