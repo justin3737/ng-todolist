@@ -3,8 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   ngOnInit() {
@@ -14,12 +13,14 @@ export class AppComponent {
   }
   list:any[]=[
     {
-      id: 1234,
+      id: uuidv4(),
       name: 'Learn Angular',
+      isFinished: false
     },
     {
-      id: 5678,
+      id: uuidv4(),
       name: 'Learn Angular, Learn Angular, Learn Angular, Learn Angular, Learn Angular, Learn Angular',
+      isFinished: false
     }
   ];
 
