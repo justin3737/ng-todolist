@@ -12,6 +12,18 @@ export class ListComponent {
   @Input() tasks: any;
   @Input() currentTabId!: number;
 
+  taskfilter(tasks: any): any {
+    let status = ['', 'active', 'done'];
+    let arr = tasks.filter((task: any) => {
+      if (this.currentTabId === 0){
+        return task;
+      } else {
+        return task.status === status[this.currentTabId];
+      }
+    });
+    return arr;
+  }
+
   changeStatus(task: Task){
     if (task.status == TaskStatus.Active){
       task.status = TaskStatus.Done;

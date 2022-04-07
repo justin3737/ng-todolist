@@ -1,6 +1,6 @@
 <div class="h-[400px]">
   <ul>
-    <li *ngFor="let task of tasks"
+    <li *ngFor="let task of taskfilter(tasks)"
       class="flex ml-[24px] mr-[48px] leading-[51px] border-solid border-b-[1px] border-b-gray-200 cursor-pointer"
       >
       <div class="flex justify-between w-full status-{{[task.status]}}" (click)="changeStatus(task)">
