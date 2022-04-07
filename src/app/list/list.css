@@ -1,0 +1,26 @@
+.title-style {
+  @apply pt-[10px] ml-[10px] w-full text-left text-ellipsis overflow-hidden whitespace-nowrap;
+}
+
+.remove-task {
+  @apply w-[40px] mr-[-40px] mt-[10px];
+}
+
+i.checkbox-mark {
+  @apply mt-[30px] w-[20px] h-[20px] bg-[url('../../assets/icon_checked.png')] bg-no-repeat;
+}
+
+i.checkbox-empty {
+  @apply mt-[25px] w-[20px] h-[20px] border-[1px] border-solid border-gray-300 rounded-[5px];
+}
+
+.status-active i.checkbox-mark {
+  @apply hidden;
+}
+
+.status-done i.checkbox-empty {
+  @apply hidden;
+}
+.status-done span {
+  @apply text-gray-700/50 line-through ;
+}
