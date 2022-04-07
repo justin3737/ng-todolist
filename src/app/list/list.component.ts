@@ -1,5 +1,5 @@
 import { Component,  Input } from '@angular/core';
-import { TaskStatus, TaskName } from '../enum/enum';
+import { TaskStatus, StatusName } from '../enum/enum';
 import { Task } from '../model/task';
 
 @Component({
@@ -32,7 +32,7 @@ export class ListComponent {
   }
 
   getStatusName(task: Task) {
-    return TaskName[task.status];
+    return StatusName[task.status];
   }
 
   removeTask(task: Task){
