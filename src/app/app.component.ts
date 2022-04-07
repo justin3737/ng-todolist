@@ -10,6 +10,7 @@ import { TaskStatus } from '../app/enum/enum';
 
 export class AppComponent {
   tasks : Task[];
+  currentTabId: number = 0;
 
   constructor(){
     this.tasks = [
@@ -23,6 +24,10 @@ export class AppComponent {
         title: 'Learn Angular, Learn Angular, Learn Angular, Learn Angular, Learn Angular, Learn Angular',
         status: TaskStatus.Active
     }];
+  }
+
+  getCurrId(tabID: number) {
+    this.currentTabId = tabID;
   }
 
   addItem(item:String){

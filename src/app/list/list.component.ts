@@ -10,6 +10,7 @@ import { Task } from '../model/task';
 
 export class ListComponent {
   @Input() tasks: any;
+  @Input() currentTabId!: number;
 
   changeStatus(task: Task){
     if (task.status == TaskStatus.Active){

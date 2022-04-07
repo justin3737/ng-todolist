@@ -16,8 +16,8 @@
       <img class="block mx-auto pb-[30px]" src="../assets/bg_empty.png">
     </div>
     <div *ngIf="tasks.length !== 0" class="bg-white shadow-lg rounded-md">
-      <tabs-component></tabs-component>
-      <list-component [tasks]="tasks"></list-component>
+      <tabs-component (pushToApp)="getCurrId($event)"></tabs-component>
+      <list-component [tasks]="tasks" [currentTabId]="currentTabId"></list-component>
     </div>
   </div>
 </div>
