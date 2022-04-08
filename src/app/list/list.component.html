@@ -1,9 +1,7 @@
-<div class="h-[400px]">
+<div class="li-task-container">
   <ul>
-    <li *ngFor="let task of taskfilter(tasks)"
-      class="flex ml-[24px] mr-[48px] leading-[51px] border-solid border-b-[1px] border-b-gray-200 cursor-pointer"
-      >
-      <div class="flex justify-between w-full status-{{getStatusName(task)}}" (click)="changeStatus(task)">
+    <li *ngFor="let task of taskfilter(tasks)"class="li-task">
+      <div class="task-status status-{{getStatusName(task)}}" (click)="changeStatus(task)">
         <i class="checkbox-empty"></i>
         <i class="checkbox-mark"></i>
         <span class="title-style">{{task.title}}</span>

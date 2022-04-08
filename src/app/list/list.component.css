@@ -1,3 +1,15 @@
+.li-task-container {
+  @apply h-[400px];
+}
+
+.li-task {
+  @apply flex ml-[24px] mr-[48px] leading-[51px] border-solid border-b-[1px] border-b-gray-200 cursor-pointer;
+}
+
+.task-status {
+  @apply flex justify-between w-full;
+}
+
 .title-style {
   @apply pt-[10px] ml-[10px] w-full text-left text-ellipsis overflow-hidden whitespace-nowrap;
 }
