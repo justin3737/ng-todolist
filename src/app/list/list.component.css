@@ -1,5 +1,5 @@
-.li-task-container {
-  @apply h-[400px];
+.li-task-container ul {
+  @apply h-[434px] overflow-scroll;
 }
 
 .li-task {
@@ -35,4 +35,12 @@ i.checkbox-empty {
 }
 .status-done span {
   @apply text-gray-700/50 line-through ;
+}
+
+.li-counts {
+  @apply flex text-sm text-gray-700 pt-[25px] pr-[48px] pb-[32px] pl-[24px] justify-between items-center;
+}
+
+.clear-finished {
+  @apply text-sm text-gray-700/50 cursor-pointer;
 }

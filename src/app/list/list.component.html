@@ -11,4 +11,10 @@
       </button>
     </li>
   </ul>
+  <div class="li-counts">
+    <div class="count-todo">{{getDoingCount()}} 個待完成項目</div>
+    <div class="clear-finished">
+      <button  (click)="removeDoneTasks()">清除已完成項目</button>
+    </div>
+  </div>
 </div>

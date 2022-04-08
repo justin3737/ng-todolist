@@ -33,8 +33,20 @@ export class ListComponent {
     return StatusName[task.status];
   }
 
+  getDoingCount(): number {
+    return this.tasks.filter((task: any) => {
+      return (task.status === TaskStatus.Active);
+    }).length;
+  }
+
   removeTask(task: Task){
     let index = this.tasks.findIndex((item: { [x: string]: string; }) => item['id'] == task.id);
     this.tasks.splice(index, 1);
+  }
+
+  removeDoneTasks(): void {
+    this.tasks = this.tasks.filter((task: any) => {
+      return (task.status === TaskStatus.Active);
+    });
   }
 }
