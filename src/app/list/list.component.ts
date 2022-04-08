@@ -14,11 +14,7 @@ export class ListComponent {
 
   taskfilter(tasks: any): any {
     let arr = tasks.filter((task: any) => {
-      if (this.currentTabId === 0){
-        return task;
-      } else {
-        return task.status === this.currentTabId;
-      }
+        return (this.currentTabId === 0 || task.status === this.currentTabId);
     });
     return arr;
   }
