@@ -3,12 +3,13 @@ import { Component, Output, EventEmitter } from "@angular/core";
 @Component({
   selector: "tabs-component",
   templateUrl: "./tabs.component.html",
-  styleUrls: ['./tabs.css']
+  styleUrls: ['./tabs.component.css']
 })
 
 export class TabsComponent {
-  constructor() {}
   @Output() pushToApp = new EventEmitter();
+
+  constructor() {}
 
   ngOnInit() {
     document.querySelectorAll<HTMLElement>('.tabs-button')[0].classList.add('active');

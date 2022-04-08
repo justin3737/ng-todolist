@@ -5,12 +5,14 @@ import { Task } from '../model/task';
 @Component({
   selector: 'list-component',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.css']
+  styleUrls: ['./list.component.css']
 })
 
 export class ListComponent {
   @Input() tasks: any;
   @Input() currentTabId!: number;
+
+  constructor() {}
 
   taskfilter(tasks: any): any {
     let arr = tasks.filter((task: any) => {

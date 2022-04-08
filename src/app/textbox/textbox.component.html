@@ -1,0 +1,6 @@
+<div class="textbox-container">
+  <input type="text" name="task" class="textbox-input" placeholder="新增待辦事項" #task/>
+  <button type="button" (click)="addItem(task.value); task.value=''" class="textbox-btn">
+    <img src="../assets/icon_add.png" class="m-auto"/>
+  </button>
+</div>
