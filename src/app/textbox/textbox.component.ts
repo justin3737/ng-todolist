@@ -21,6 +21,7 @@ export class TextBoxComponent {
         title: this.value,
         status: TaskStatus.Active
       });
+      this.value = '';
     }
   }
 }
