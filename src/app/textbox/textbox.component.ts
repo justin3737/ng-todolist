@@ -10,14 +10,17 @@ import { TaskStatus } from '../enum/enum';
 
 export class TextBoxComponent {
   @Input() tasks: any;
+  value: string = ''
 
   constructor() {}
 
-  addItem(task:String){
-    this.tasks.push({
-      id: uuidv4(),
-      title: task,
-       status: TaskStatus.Active
-    });
+  addItem(){
+    if (this.value.length > 0) {
+      this.tasks.push({
+        id: uuidv4(),
+        title: this.value,
+        status: TaskStatus.Active
+      });
+    }
   }
 }
