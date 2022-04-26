@@ -18,10 +18,16 @@ export const taskReducer = createReducer(
     }]
   }),
   on(removeItem, (state, { ...payload }) => {
-    return state.filter((task) => task.id !== payload.id);
+    return state.filter((item) => item.id !== payload.id);
   }),
   on(toggleItem, (state, { ...payload }) => {
-    return state;
+    return state.map((item) => {
+      if(item.id === payload.id) {
+        return toogleStatus(item);
+      }else{
+        return item;
+      }
+    });
   }),
   on(clearDoneItems, (state) => {
     return state.filter((item) => (item.status === TaskStatus.Active));
@@ -29,9 +35,16 @@ export const taskReducer = createReducer(
 );
 
 
-// const tooglefunction = (object:any)=>{
-//   return {
-//     ...object,
-//     status: object.status === TaskStatus.Active ? TaskStatus.Done : TaskStatus.Active
-//   }
-// }
+const toogleStatus = (object:Task) => {
+  if (object.status === TaskStatus.Active) {
+    return {
+      ...object,
+      status: TaskStatus.Done
+    }
+  } else {
+    return {
+      ...object,
+      status: TaskStatus.Active
+    }
+  }
+}
