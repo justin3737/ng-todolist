@@ -1,5 +1,8 @@
+import { Store } from '@ngrx/store';
 import { Component } from '@angular/core';
 import { Task } from './store/models/task.model';
+import { Observable } from "rxjs";
+import  { AppState } from './store/models/app-state.model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,11 +10,11 @@ import { Task } from './store/models/task.model';
 })
 
 export class AppComponent {
-  tasks : Task[];
+  tasks$: Observable<Array<Task>>;
   currentTabId: number = 0;
 
-  constructor(){
-    this.tasks = [];
+  constructor(store: Store<AppState>) {
+    this.tasks$ = store.select('tasks');
   }
 
   getCurrId(tabID: number) {

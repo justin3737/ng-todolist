@@ -2,15 +2,15 @@
   <img class="inline-block my-10" src="../assets/brandname.png"/>
 </div>
 <div class="h-[520px] mx-auto w-[500px] xs:w-[90%]">
-  <textbox-component [tasks]="tasks"></textbox-component>
+  <textbox-component></textbox-component>
   <div class="w-full h-fll mt-[20px]">
-    <div *ngIf="tasks.length === 0">
+    <div *ngIf="(tasks$| async)?.length === 0">
       <div class="text-center py-[20px]">目前沒有待辦清單</div>
       <img class="block mx-auto pb-[30px]" src="../assets/bg_empty.png">
     </div>
-    <div *ngIf="tasks.length !== 0" class="bg-white shadow-lg rounded-md">
+    <div *ngIf="(tasks$| async)?.length !== 0" class="bg-white shadow-lg rounded-md">
       <tabs-component (pushToApp)="getCurrId($event)"></tabs-component>
-      <list-component [tasks]="tasks" [currentTabId]="currentTabId"></list-component>
+      <list-component [currentTabId]="currentTabId"></list-component>
     </div>
   </div>
 </div>
