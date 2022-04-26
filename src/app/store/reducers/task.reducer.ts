@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { addItem, removeItem, toggleItem } from '../actions/task.action';
+import { addItem, removeItem, toggleItem, clearDoneItems } from '../actions/task.action';
 import { Task } from '../models/task.model';
 import { v4 as uuidv4 } from 'uuid';
 import { TaskStatus } from '../../enum/enum';
@@ -23,6 +23,9 @@ export const taskReducer = createReducer(
   on(toggleItem, (state, { ...payload }) => {
     return state;
   }),
+  on(clearDoneItems, (state) => {
+    return state.filter((item) => (item.status === TaskStatus.Active));
+  })
 );
 
 

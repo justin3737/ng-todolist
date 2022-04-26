@@ -12,8 +12,8 @@ export const removeItem =
     props<{ id: String }>()
   );
 
-export const clear =
-  createAction('[TASK] CLEAR');
+export const clearDoneItems =
+  createAction('[TASK] CLEAR DONE ITEMS');
 
 export const changeTab =
   createAction('[TASK] CHANGE TAB');

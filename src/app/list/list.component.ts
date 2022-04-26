@@ -3,7 +3,7 @@ import { Task } from '../store/models/task.model';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import  { AppState } from '../store/models/app-state.model';
-import { removeItem, toggleItem } from '../store/actions/task.action';
+import { removeItem, toggleItem, clearDoneItems } from '../store/actions/task.action';
 
 @Component({
   selector: 'list-component',
@@ -50,9 +50,7 @@ export class ListComponent {
     }));
   }
 
-  // removeDoneTasks(): void {
-  //   this.tasks = this.tasks.filter((task) => {
-  //     return (task.status === TaskStatus.Active);
-  //   });
-  // }
+  clearDoneItems(){
+    this.store.dispatch(clearDoneItems());
+  }
 }
