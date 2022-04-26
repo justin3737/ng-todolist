@@ -1,7 +1,9 @@
-import { Component, Input } from "@angular/core";
-import { v4 as uuidv4 } from 'uuid';
-import { TaskStatus } from '../enum/enum';
+import { Component } from "@angular/core";
 import { Task } from "../store/models/task.model";
+import { addItem } from '../store/actions/task.action';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import  { AppState } from '../store/models/app-state.model';
 
 @Component({
   selector: "textbox-component",
@@ -10,18 +12,20 @@ import { Task } from "../store/models/task.model";
 })
 
 export class TextBoxComponent {
-  @Input() tasks: Array<Task> = [];
+  tasks$: Observable<Array<Task>>;
   value: string = ''
+  store: Store<AppState>;
 
-  constructor() {}
+  constructor(store: Store<AppState>) {
+    this.store = store;
+    this.tasks$ = store.select('tasks');
+  }
 
   addItem(){
     if (this.value.length > 0) {
-      this.tasks.push({
-        id: uuidv4(),
-        title: this.value,
-        status: TaskStatus.Active
-      });
+      this.store.dispatch(addItem({
+        title: this.value
+      }));
       this.value = '';
     }
   }
