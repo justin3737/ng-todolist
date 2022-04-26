@@ -20,15 +20,7 @@ export class TabsComponent {
     this.tabs$ = this.store.select('tabs');
   }
 
-  ngOnInit() {
-    document.querySelectorAll<HTMLElement>('.tabs-button')[0].classList.add('active');
-  }
-
   changeTab(id: number) {
-    for(let i=0; i<document.querySelectorAll<HTMLElement>('.tabs-button').length; i++) {
-      document.querySelectorAll<HTMLElement>('.tabs-button')[i].classList.remove('active');
-    }
-    document.querySelectorAll<HTMLElement>('.tabs-button')[id].classList.add('active');
     this.store.dispatch(changeTab({id}));
   }
 }
