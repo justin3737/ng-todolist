@@ -1,4 +1,9 @@
-import { Component, Output, EventEmitter } from "@angular/core";
+import { Component } from "@angular/core";
+import { changeTab } from "../store/actions/tab.action";
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import  { AppState } from '../store/models/app-state.model';
+
 
 @Component({
   selector: "tabs-component",
@@ -7,9 +12,13 @@ import { Component, Output, EventEmitter } from "@angular/core";
 })
 
 export class TabsComponent {
-  @Output() pushToApp = new EventEmitter();
+  store: Store<AppState>;
+  tabs$: Observable<number>;
 
-  constructor() {}
+  constructor(store: Store<AppState>) {
+    this.store = store;
+    this.tabs$ = this.store.select('tabs');
+  }
 
   ngOnInit() {
     document.querySelectorAll<HTMLElement>('.tabs-button')[0].classList.add('active');
@@ -20,6 +29,6 @@ export class TabsComponent {
       document.querySelectorAll<HTMLElement>('.tabs-button')[i].classList.remove('active');
     }
     document.querySelectorAll<HTMLElement>('.tabs-button')[id].classList.add('active');
-    this.pushToApp.emit(id);
+    this.store.dispatch(changeTab({id}));
   }
 }
