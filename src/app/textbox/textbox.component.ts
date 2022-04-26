@@ -1,6 +1,7 @@
 import { Component, Input } from "@angular/core";
 import { v4 as uuidv4 } from 'uuid';
 import { TaskStatus } from '../enum/enum';
+import { Task } from "../model/task";
 
 @Component({
   selector: "textbox-component",
@@ -9,7 +10,7 @@ import { TaskStatus } from '../enum/enum';
 })
 
 export class TextBoxComponent {
-  @Input() tasks: any;
+  @Input() tasks: Array<Task> = [];
   value: string = ''
 
   constructor() {}

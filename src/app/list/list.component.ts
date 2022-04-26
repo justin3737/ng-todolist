@@ -9,13 +9,13 @@ import { Task } from '../model/task';
 })
 
 export class ListComponent {
-  @Input() tasks: any;
+  @Input() tasks: Array<Task> = [];
   @Input() currentTabId!: number;
 
   constructor() {}
 
-  taskfilter(tasks: any): any {
-    let arr = tasks.filter((task: any) => {
+  taskfilter(tasks: Array<Task>): Array<Task> {
+    let arr = tasks.filter((task) => {
         return (this.currentTabId === 0 || task.status === this.currentTabId);
     });
     return arr;
@@ -34,18 +34,18 @@ export class ListComponent {
   }
 
   getDoingCount(): number {
-    return this.tasks.filter((task: any) => {
+    return this.tasks.filter((task) => {
       return (task.status === TaskStatus.Active);
     }).length;
   }
 
   removeTask(task: Task){
-    let index = this.tasks.findIndex((item: { [x: string]: string; }) => item['id'] == task.id);
+    let index = this.tasks.findIndex((item) => item['id'] == task.id);
     this.tasks.splice(index, 1);
   }
 
   removeDoneTasks(): void {
-    this.tasks = this.tasks.filter((task: any) => {
+    this.tasks = this.tasks.filter((task) => {
       return (task.status === TaskStatus.Active);
     });
   }
