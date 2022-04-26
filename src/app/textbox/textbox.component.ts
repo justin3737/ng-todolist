@@ -1,7 +1,7 @@
 import { Component, Input } from "@angular/core";
 import { v4 as uuidv4 } from 'uuid';
 import { TaskStatus } from '../enum/enum';
-import { Task } from "../store/model/task.model";
+import { Task } from "../store/models/task.model";
 
 @Component({
   selector: "textbox-component",
