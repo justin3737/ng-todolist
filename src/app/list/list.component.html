@@ -1,7 +1,7 @@
 <div class="li-task-container">
   <ul>
     <li *ngFor="let task of tasks$ | async"class="li-task">
-      <div class="task-status status-">
+      <div class="task-status status-{{task.status}}">
         <i class="checkbox-empty"></i>
         <i class="checkbox-mark"></i>
         <span class="title-style">{{task.title}}</span>
@@ -12,7 +12,7 @@
     </li>
   </ul>
   <div class="li-counts">
-    <div class="count-todo">{{ (tasks$ | async)?.length }} 個待完成項目</div>
+    <div class="count-todo">{{ (tasks$ | async )?.length }} 個待完成項目</div>
     <div class="clear-finished">
       <button >清除已完成項目</button>
     </div>
