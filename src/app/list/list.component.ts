@@ -1,9 +1,9 @@
 import { Component,  Input } from '@angular/core';
-import { TaskStatus, StatusName } from '../enum/enum';
 import { Task } from '../store/models/task.model';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import  { AppState } from '../store/models/app-state.model';
+import { removeItem, toggleItem } from '../store/actions/task.action';
 
 @Component({
   selector: 'list-component',
@@ -29,11 +29,9 @@ export class ListComponent {
   // }
 
   changeStatus(task: Task){
-    if (task.status == TaskStatus.Active){
-      task.status = TaskStatus.Done;
-    } else {
-      task.status = TaskStatus.Active;
-    }
+    this.store.dispatch(toggleItem({
+      id: task.id
+    }));
   }
 
   // getStatusName(task: Task) {
@@ -46,10 +44,11 @@ export class ListComponent {
   //   }).length;
   // }
 
-  // removeTask(task: Task){
-  //   let index = this.tasks.findIndex((item) => item['id'] == task.id);
-  //   this.tasks.splice(index, 1);
-  // }
+  removeTask(task: Task){
+    this.store.dispatch(removeItem({
+      id: task.id
+    }));
+  }
 
   // removeDoneTasks(): void {
   //   this.tasks = this.tasks.filter((task) => {

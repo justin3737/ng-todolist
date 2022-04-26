@@ -1,12 +1,12 @@
 <div class="li-task-container">
   <ul>
     <li *ngFor="let task of tasks$ | async"class="li-task">
-      <div class="task-status status-{{task.status}}">
+      <div class="task-status status-{{task.status}}" (click)="changeStatus(task)">
         <i class="checkbox-empty"></i>
         <i class="checkbox-mark"></i>
         <span class="title-style">{{task.title}}</span>
       </div>
-      <button class="remove-task">
+      <button class="remove-task" (click)="removeTask(task)">
         <img src="../assets/icon_x.png" alt="" class="m-auto">
       </button>
     </li>
