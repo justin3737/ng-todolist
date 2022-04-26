@@ -14,11 +14,12 @@ import { removeItem, toggleItem, clearDoneItems } from '../store/actions/task.ac
 export class ListComponent {
   store: Store<AppState>;
   tasks$: Observable<Array<Task>>;
-  @Input() currentTabId!: number;
+  tabs$: Observable<number>;
 
   constructor(store: Store<AppState>) {
     this.store = store;
     this.tasks$ = store.select('tasks');
+    this.tabs$ = store.select('tabs');
   }
 
   // taskfilter(tasks: Array<Task>): Array<Task> {

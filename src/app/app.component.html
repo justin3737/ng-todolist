@@ -10,7 +10,7 @@
     </div>
     <div *ngIf="(tasks$| async)?.length !== 0" class="bg-white shadow-lg rounded-md">
       <tabs-component></tabs-component>
-      <list-component [currentTabId]="currentTabId"></list-component>
+      <list-component></list-component>
     </div>
   </div>
 </div>

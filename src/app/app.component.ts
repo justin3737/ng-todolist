@@ -11,13 +11,8 @@ import  { AppState } from './store/models/app-state.model';
 
 export class AppComponent {
   tasks$: Observable<Array<Task>>;
-  currentTabId: number = 0;
 
   constructor(store: Store<AppState>) {
     this.tasks$ = store.select('tasks');
-  }
-
-  getCurrId(tabID: number) {
-    this.currentTabId = tabID;
   }
 }
