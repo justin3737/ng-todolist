@@ -1,6 +1,6 @@
 import { Component,  Input } from '@angular/core';
 import { TaskStatus, StatusName } from '../enum/enum';
-import { Task } from '../model/task';
+import { Task } from '../store/model/task.model';
 
 @Component({
   selector: 'list-component',
