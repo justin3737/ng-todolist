@@ -15,12 +15,6 @@ export const removeItem =
 export const clearDoneItems =
   createAction('[TASK] CLEAR DONE ITEMS');
 
-export const changeTab =
-  createAction(
-    '[TASK] CHANGE TAB',
-    props<{ id: Number }>()
-  );
-
 export const toggleItem =
   createAction(
     '[TASK] TOGGLE ITEM',
