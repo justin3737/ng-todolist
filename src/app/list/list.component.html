@@ -14,7 +14,7 @@
   <div class="li-counts">
     <div class="count-todo">{{ (tasks$ | async )?.length }} 個待完成項目</div>
     <div class="clear-finished">
-      <button >清除已完成項目</button>
+      <button (click)="clearDoneItems">清除已完成項目</button>
     </div>
   </div>
 </div>

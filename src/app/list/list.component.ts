@@ -34,16 +34,6 @@ export class ListComponent {
     }));
   }
 
-  // getStatusName(task: Task) {
-  //   return StatusName[task.status];
-  // }
-
-  // getDoingCount(): number {
-  //   return this.tasks.filter((task) => {
-  //     return (task.status === TaskStatus.Active);
-  //   }).length;
-  // }
-
   removeTask(task: Task){
     this.store.dispatch(removeItem({
       id: task.id
