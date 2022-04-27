@@ -1,7 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { addItem, removeItem, toggleItem, clearDoneItems } from '../actions/task.action';
 import { Task } from '../models/task.model';
-import { v4 as uuidv4 } from 'uuid';
 import { TaskStatus } from '../../enum/enum';
 
 export const initialState: Array<Task> = [];
@@ -12,7 +11,7 @@ export const taskReducer = createReducer(
     return [
     ...state,
     {
-      id: uuidv4(),
+      id: new Date().getTime().toString(),
       title: payload.title,
       status: TaskStatus.Active
     }]
