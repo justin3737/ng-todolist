@@ -22,6 +22,5 @@ export class Task {
 
 export interface AppState {
   tasks: Array<Task>;
-  tabs: number;
   tabsfilter: filterEnum;
 }
