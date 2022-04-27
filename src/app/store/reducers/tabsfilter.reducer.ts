@@ -4,7 +4,7 @@ import { filterEnum } from '../data-layer/types';
 
 export const initialState = filterEnum.SHOW_ALL;
 
-export const tabReducer = createReducer(
+export const tabsfilterReducer = createReducer(
   initialState,
   on(changeFilter, (state, { ...payload }) => {
     return payload.filter;

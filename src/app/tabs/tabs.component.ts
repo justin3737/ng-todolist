@@ -14,11 +14,11 @@ import  { AppState, filterEnum } from '../store/data-layer/types';
 export class TabsComponent {
   filterEnum = filterEnum;
   store: Store<AppState>;
-  tabs$: Observable<number>;
+  tabsfilter$: Observable<filterEnum>;
 
   constructor(store: Store<AppState>) {
     this.store = store;
-    this.tabs$ = this.store.select('tabs');
+    this.tabsfilter$ = this.store.select('tabsfilter');
   }
 
   onFilter(filter: filterEnum) {

@@ -1,5 +1,5 @@
 import { Component,  Input } from '@angular/core';
-import { AppState, Task } from '../store/data-layer/types';
+import { AppState, Task, filterEnum } from '../store/data-layer/types';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { removeItem, toggleItem, clearDoneItems } from '../store/actions/task.action';
@@ -13,12 +13,13 @@ import { removeItem, toggleItem, clearDoneItems } from '../store/actions/task.ac
 export class ListComponent {
   store: Store<AppState>;
   tasks$: Observable<Array<Task>>;
-  tabs$: Observable<number>;
+  tabsfilter$: Observable<filterEnum>;
+
 
   constructor(store: Store<AppState>) {
     this.store = store;
     this.tasks$ = store.select('tasks');
-    this.tabs$ = store.select('tabs');
+    this.tabsfilter$ = store.select('tabsfilter');
   }
 
   // taskfilter(tasks: Array<Task>): Array<Task> {

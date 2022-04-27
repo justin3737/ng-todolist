@@ -8,7 +8,7 @@ import { ListComponent } from './list/list.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { TextBoxComponent } from './textbox/textbox.component';
 import { taskReducer } from './store/reducers/task.reducer';
-import { tabReducer } from './store/reducers/tab.reducer';
+import { tabsfilterReducer } from './store/reducers/tabsfilter.reducer';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { tabReducer } from './store/reducers/tab.reducer';
     FormsModule,
     StoreModule.forRoot({
       tasks: taskReducer,
-      tabs: tabReducer
+      tabsfilter: tabsfilterReducer
     })
   ],
   providers: [],
