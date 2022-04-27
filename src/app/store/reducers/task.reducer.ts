@@ -1,7 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 import { addItem, removeItem, toggleItem, clearDoneItems } from '../actions/task.action';
 import { Task } from '../models/task.model';
-import { TaskStatus } from '../../enum/enum';
+import { TaskStatus } from '../enum/types';
 
 export const initialState: Array<Task> = [];
 

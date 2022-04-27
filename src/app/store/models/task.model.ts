@@ -1,4 +1,4 @@
-import { TaskStatus } from '../../enum/enum';
+import { TaskStatus } from '../enum/types';
 
 export class Task{
     title : String;
