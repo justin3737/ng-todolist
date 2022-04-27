@@ -1,8 +1,8 @@
 import { Component,  Input } from '@angular/core';
-import { AppState, Task, filterEnum } from '../store/data-layer/types';
+import { AppState, Task, filterEnum } from '../../store/data-layer/types';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { removeItem, toggleItem, clearDoneItems } from '../store/actions/task.action';
+import { removeItem, toggleItem, clearDoneItems } from '../../store/actions/task.action';
 
 @Component({
   selector: 'list-component',

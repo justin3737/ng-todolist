@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
-import { changeFilter } from "../store/actions/tab.action";
+import { changeFilter } from "../../store/actions/tab.action";
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import  { AppState, filterEnum } from '../store/data-layer/types';
+import  { AppState, filterEnum } from '../../store/data-layer/types';
 
 
 @Component({

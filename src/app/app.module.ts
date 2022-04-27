@@ -4,9 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
-import { ListComponent } from './list/list.component';
-import { TabsComponent } from './tabs/tabs.component';
-import { TextBoxComponent } from './textbox/textbox.component';
+import { ListComponent } from './components/list/list.component';
+import { TabsComponent } from './components/tabs/tabs.component';
+import { TextBoxComponent } from './components/textbox/textbox.component';
 import { taskReducer } from './store/reducers/task.reducer';
 import { tabsfilterReducer } from './store/reducers/tabsfilter.reducer';
 
