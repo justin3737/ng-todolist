@@ -8,4 +8,16 @@ const enum TodoFilterEnum {
   SHOW_ACTIVE,
   SHOW_DONE
 }
-export { TaskStatus, TodoFilterEnum }
+
+class Task {
+  title : String;
+  status : TaskStatus;
+  id: String;
+  constructor(title: String){
+      this.title = title;
+      this.status = TaskStatus.Active;
+      this.id = '';
+  }
+}
+
+export { Task, TaskStatus, TodoFilterEnum }

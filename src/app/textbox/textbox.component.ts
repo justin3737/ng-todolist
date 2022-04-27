@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { Task } from "../store/models/task.model";
+import { Task } from "../store/enum/types";
 import { addItem } from '../store/actions/task.action';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';

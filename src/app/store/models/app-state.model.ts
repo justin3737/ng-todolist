@@ -1,4 +1,4 @@
-import { Task } from './task.model'
+import { Task } from '../enum/types';
 
 export interface AppState {
   tasks: Array<Task>;
