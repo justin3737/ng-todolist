@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { changeTab } from "../store/actions/tab.action";
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import  { AppState } from '../store/models/app-state.model';
+import  { AppState } from '../store/data-layer/types';
 
 
 @Component({

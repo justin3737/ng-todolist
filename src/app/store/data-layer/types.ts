@@ -20,4 +20,10 @@ class Task {
   }
 }
 
-export { Task, TaskStatus, TodoFilterEnum }
+interface AppState {
+  tasks: Array<Task>;
+  tabs: number;
+  tabsfilter: TodoFilterEnum;
+}
+
+export { AppState, Task, TaskStatus, TodoFilterEnum }
