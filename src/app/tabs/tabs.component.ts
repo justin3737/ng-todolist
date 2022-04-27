@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
-import { changeTab } from "../store/actions/tab.action";
+import { changeFilter } from "../store/actions/tab.action";
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import  { AppState } from '../store/data-layer/types';
+import  { AppState, filterEnum } from '../store/data-layer/types';
 
 
 @Component({
@@ -12,6 +12,7 @@ import  { AppState } from '../store/data-layer/types';
 })
 
 export class TabsComponent {
+  filterEnum = filterEnum;
   store: Store<AppState>;
   tabs$: Observable<number>;
 
@@ -20,7 +21,7 @@ export class TabsComponent {
     this.tabs$ = this.store.select('tabs');
   }
 
-  changeTab(id: number) {
-    this.store.dispatch(changeTab({id}));
+  onFilter(filter: filterEnum) {
+    this.store.dispatch(changeFilter({filter}));
   }
 }

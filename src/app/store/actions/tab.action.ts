@@ -1,7 +1,8 @@
 import { createAction, props } from '@ngrx/store';
+import { filterEnum } from '../data-layer/types';
 
-export const changeTab =
+export const changeFilter =
   createAction(
-    '[TAB] CHANGE TAB',
-    props<{ id: number }>()
+    '[TAB] CHANGE FILTER',
+    props<{ filter: filterEnum }>()
   );

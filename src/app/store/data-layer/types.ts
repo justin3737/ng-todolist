@@ -1,15 +1,15 @@
-const enum TaskStatus {
+export enum TaskStatus {
   Active = 1,
   Done = 2
 }
 
-const enum TodoFilterEnum {
+export enum filterEnum {
   SHOW_ALL,
   SHOW_ACTIVE,
   SHOW_DONE
 }
 
-class Task {
+export class Task {
   title : String;
   status : TaskStatus;
   id: String;
@@ -20,10 +20,8 @@ class Task {
   }
 }
 
-interface AppState {
+export interface AppState {
   tasks: Array<Task>;
   tabs: number;
-  tabsfilter: TodoFilterEnum;
+  tabsfilter: filterEnum;
 }
-
-export { AppState, Task, TaskStatus, TodoFilterEnum }

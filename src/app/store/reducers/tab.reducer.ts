@@ -1,11 +1,12 @@
 import { createReducer, on } from '@ngrx/store';
-import { changeTab } from '../actions/tab.action';
+import { changeFilter } from '../actions/tab.action';
+import { filterEnum } from '../data-layer/types';
 
-export const initialState = 0;
+export const initialState = filterEnum.SHOW_ALL;
 
 export const tabReducer = createReducer(
   initialState,
-  on(changeTab, (state, { ...payload }) => {
-    return payload.id;
+  on(changeFilter, (state, { ...payload }) => {
+    return payload.filter;
   })
 );
