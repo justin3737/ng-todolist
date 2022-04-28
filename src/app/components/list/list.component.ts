@@ -2,7 +2,7 @@ import { Component,  Input } from '@angular/core';
 import { Task, filterEnum } from '../../store/data-layer/types';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { removeItem, toggleItem, clearDoneItems } from '../../store/actions/task.action';
+import { removeItem, toggleItem, clearDoneItems } from '../../state/task.action';
 import { AppState } from '../../state/app.state';
 
 @Component({

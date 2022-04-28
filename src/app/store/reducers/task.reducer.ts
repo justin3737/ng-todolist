@@ -1,6 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { addItem, removeItem, toggleItem, clearDoneItems } from '../actions/task.action';
-import { changeFilter } from '../actions/tabsfilter.action';
+import { addItem, removeItem, toggleItem, clearDoneItems } from '../../state/task.action';
 import { Task } from '../data-layer/types';
 import { TaskStatus, filterEnum } from '../data-layer/types';
 
