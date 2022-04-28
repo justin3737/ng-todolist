@@ -33,7 +33,7 @@ i.checkbox-empty {
 .status-done i.checkbox-empty {
   @apply hidden;
 }
-.status-Done span {
+.status-done span {
   @apply text-gray-700/50 line-through ;
 }
 

@@ -26,9 +26,9 @@ export class AppComponent {
         case filterEnum.SHOW_ALL:
           return tasks;
         case filterEnum.SHOW_ACTIVE:
-          return tasks.filter((t) => t.completed === true);
-        case filterEnum.SHOW_DONE:
           return tasks.filter((t) => t.completed === false);
+        case filterEnum.SHOW_DONE:
+          return tasks.filter((t) => t.completed === true);
         default:
           return tasks;
       }
