@@ -30,18 +30,6 @@ export const taskReducer = createReducer(
   on(clearDoneItems, (state) => {
     return state.filter((item) => (item.status === TaskStatus.Active));
   }),
-  // on(changeFilter, (state, { ...payload }) => {
-  //   switch(payload.filter){
-  //     case filterEnum.SHOW_ALL:
-  //       return state;
-  //     case filterEnum.SHOW_ACTIVE:
-  //       return state.filter((item) => (item.status === TaskStatus.Active));
-  //     case filterEnum.SHOW_DONE:
-  //       return state.filter((item) => (item.status === TaskStatus.Done));
-  //     default:
-  //       return state;
-  //   }
-  // }),
 );
 
 
