@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './components/list/list.component';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { TextBoxComponent } from './components/textbox/textbox.component';
-import { taskReducer } from './store/reducers/task.reducer';
-import { tabsfilterReducer } from './store/reducers/tabsfilter.reducer';
+import { taskReducer } from './state/task.reducer';
+import { tabsfilterReducer } from './state/tabsfilter.reducer';
 
 @NgModule({
   declarations: [

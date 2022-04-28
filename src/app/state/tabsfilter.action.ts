@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { filterEnum } from '../store/data-layer/types';
+import { filterEnum } from './data-types';
 
 export const changeFilter =
   createAction(

@@ -1,7 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
-import { addItem, removeItem, toggleItem, clearDoneItems } from '../../state/task.action';
-import { Task } from '../data-layer/types';
-import { TaskStatus, filterEnum } from '../data-layer/types';
+import { addItem, removeItem, toggleItem, clearDoneItems } from './task.action';
+import { Task, TaskStatus, filterEnum } from './data-types';
 
 export const initialState: Array<Task> = [];
 
