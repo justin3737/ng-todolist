@@ -1,8 +1,9 @@
 import { Component } from "@angular/core";
-import { AppState, Task } from "../../store/data-layer/types";
+import { Task } from "../../store/data-layer/types";
 import { addItem } from '../../store/actions/task.action';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { AppState } from '../../state/app.state';
 
 @Component({
   selector: "textbox-component",

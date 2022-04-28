@@ -19,7 +19,7 @@
 }
 
 i.checkbox-mark {
-  @apply mt-[30px] w-[20px] h-[20px] bg-[url('../../assets/icon_checked.png')] bg-no-repeat;
+  @apply mt-[30px] w-[20px] h-[20px] bg-[url('../../../assets/icon_checked.png')] bg-no-repeat;
 }
 
 i.checkbox-empty {

@@ -19,8 +19,3 @@ export class Task {
       this.id = '';
   }
 }
-
-export interface AppState {
-  tasks: Array<Task>;
-  tabsfilter: filterEnum;
-}

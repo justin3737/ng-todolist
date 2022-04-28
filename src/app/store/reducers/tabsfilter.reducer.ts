@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { changeFilter } from '../actions/tab.action';
+import { changeFilter } from '../actions/tabsfilter.action';
 import { filterEnum } from '../data-layer/types';
 
 export const initialState = filterEnum.SHOW_ALL;

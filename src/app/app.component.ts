@@ -1,7 +1,8 @@
 import { Store } from '@ngrx/store';
 import { Component } from '@angular/core';
-import { AppState, Task } from './store/data-layer/types';
+import { Task } from './store/data-layer/types';
 import { Observable } from "rxjs";
+import { AppState } from './state/app.state';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
