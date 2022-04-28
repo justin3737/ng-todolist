@@ -1,6 +1,10 @@
 <div class="textbox-container">
-  <input type="text" name="task" class="textbox-input" placeholder="新增待辦事項" [(ngModel)]="value"  (keydown.enter)="addItem()"/>
-  <button type="button" (click)="addItem()" class="textbox-btn">
+  <input
+    [(ngModel)]="value"
+    class="textbox-input"
+    autofocus placeholder="新增待辦事項"
+    (keydown.enter)="onAddTodo()"/>
+  <button type="button" (click)="onAddTodo()" class="textbox-btn">
     <img src="../assets/icon_add.png" class="m-auto"/>
   </button>
 </div>

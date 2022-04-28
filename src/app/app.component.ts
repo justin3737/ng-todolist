@@ -4,6 +4,7 @@ import { Task, filterEnum, TaskStatus } from './state/task.model';
 import { Observable } from "rxjs";
 import { AppState } from './state/app.state';
 import { changeFilter } from './state/tabsfilter.action';
+import { addItem } from './state/task.action';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -35,4 +36,11 @@ export class AppComponent {
   filter(filter: filterEnum): void {
     this.store.dispatch(changeFilter({filter}));
   }
+
+  addTodo(text: string): void {
+    this.store.dispatch(addItem({
+      title: text
+    }));
+  }
+
 }

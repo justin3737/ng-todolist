@@ -1,7 +1,4 @@
-import { Component } from "@angular/core";
-import { addItem } from '../../state/task.action';
-import { Store } from '@ngrx/store';
-import { AppState } from '../../state/app.state';
+import { Component, Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: "textbox-component",
@@ -11,18 +8,14 @@ import { AppState } from '../../state/app.state';
 
 export class TextBoxComponent {
   value: string = ''
-  store: Store<AppState>;
+  @Output() addTodo = new EventEmitter<string>();
 
-  constructor(store: Store<AppState>) {
-    this.store = store;
-  }
+  constructor() {}
 
-  addItem(){
-    if (this.value.length > 0) {
-      this.store.dispatch(addItem({
-        title: this.value
-      }));
-      this.value = '';
-    }
+  onAddTodo(): void {
+    if (!this.value.length) return;
+
+    this.addTodo.emit(this.value);
+    this.value = '';
   }
 }
