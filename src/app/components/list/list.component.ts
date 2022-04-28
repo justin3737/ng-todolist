@@ -1,5 +1,5 @@
 import { Component,  Input, Output, EventEmitter } from '@angular/core';
-import { Task, TaskStatus } from '../../state/task.model'
+import { Task } from '../../state/task.model'
 
 @Component({
   selector: 'list-component',
@@ -8,7 +8,6 @@ import { Task, TaskStatus } from '../../state/task.model'
 })
 
 export class ListComponent {
-  TaskStatus = TaskStatus;
   @Input() tasks:any = [];
   @Input() filteredTasks:any = [];
   @Output() removeTask = new EventEmitter<Task>();

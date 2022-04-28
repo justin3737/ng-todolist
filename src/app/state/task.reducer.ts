@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { addItem, removeItem, toggleItem, clearDoneItems } from './task.action';
-import { Task, TaskStatus } from "./task.model";
+import { Task } from "./task.model";
 
 export const initialState: Array<Task> = [];
 
@@ -12,7 +12,7 @@ export const taskReducer = createReducer(
     {
       id: new Date().getTime().toString(),
       title: payload.title,
-      status: TaskStatus.Active
+      completed: false
     }]
   }),
   on(removeItem, (state, { ...payload }) => {
@@ -21,28 +21,16 @@ export const taskReducer = createReducer(
   on(toggleItem, (state, { ...payload }) => {
     return state.map((item) => {
       if(item.id === payload.id) {
-        return toogleStatus(item);
+        return {
+          ...item,
+          completed: !item.completed
+        };
       }else{
         return item;
       }
     });
   }),
   on(clearDoneItems, (state) => {
-    return state.filter((item) => (item.status === TaskStatus.Active));
+    return state.filter((item) => (item.completed === false));
   }),
 );
-
-
-const toogleStatus = (object:Task) => {
-  if (object.status === TaskStatus.Active) {
-    return {
-      ...object,
-      status: TaskStatus.Done
-    }
-  } else {
-    return {
-      ...object,
-      status: TaskStatus.Active
-    }
-  }
-}

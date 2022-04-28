@@ -1,8 +1,3 @@
-export enum TaskStatus {
-  Active = 1,
-  Done = 2
-}
-
 export enum filterEnum {
   SHOW_ALL,
   SHOW_ACTIVE,
@@ -11,11 +6,11 @@ export enum filterEnum {
 
 export class Task {
   title : String;
-  status : TaskStatus;
+  completed : Boolean;
   id: String;
   constructor(title: String){
       this.title = title;
-      this.status = TaskStatus.Active;
       this.id = '';
+      this.completed = false;
   }
 }

@@ -26,11 +26,11 @@ i.checkbox-empty {
   @apply mt-[25px] w-[20px] h-[20px] border-[1px] border-solid border-gray-300 rounded-[5px];
 }
 
-.status-Active i.checkbox-mark {
+.status-active i.checkbox-mark {
   @apply hidden;
 }
 
-.status-Done i.checkbox-empty {
+.status-done i.checkbox-empty {
   @apply hidden;
 }
 .status-Done span {

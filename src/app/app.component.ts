@@ -1,6 +1,6 @@
 import { Store } from '@ngrx/store';
 import { Component } from '@angular/core';
-import { Task, filterEnum, TaskStatus } from './state/task.model';
+import { Task, filterEnum } from './state/task.model';
 import { Observable } from "rxjs";
 import { AppState } from './state/app.state';
 import { changeFilter } from './state/tabsfilter.action';
@@ -23,10 +23,12 @@ export class AppComponent {
     this.tabsfilter$ = store.select('tabsfilter');
     this.filteredTasks$ = store.select(({ tasks, tabsfilter }) => {
       switch (tabsfilter) {
+        case filterEnum.SHOW_ALL:
+          return tasks;
         case filterEnum.SHOW_ACTIVE:
-          return tasks.filter((t) => t.status === TaskStatus.Active);
+          return tasks.filter((t) => t.completed === true);
         case filterEnum.SHOW_DONE:
-          return tasks.filter((t) => t.status === TaskStatus.Done);
+          return tasks.filter((t) => t.completed === false);
         default:
           return tasks;
       }

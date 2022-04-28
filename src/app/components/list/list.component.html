@@ -1,7 +1,10 @@
 <div class="li-task-container">
   <ul>
     <li *ngFor="let task of filteredTasks"class="li-task">
-      <div class="task-status status-{{TaskStatus[task.status]}}" (click)="onToggle(task)">
+      <div
+        class="task-status"
+        [ngClass]="{'status-active': !task.completed, 'status-done': task.completed}"
+        (click)="onToggle(task)">
         <i class="checkbox-empty"></i>
         <i class="checkbox-mark"></i>
         <span class="title-style">{{task.title}}</span>
