@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { removeItem, toggleItem, clearDoneItems } from '../../state/task.action';
 import { AppState } from '../../state/app.state';
+import { selectTabFilter } from '../../state/task.selector';
 
 @Component({
   selector: 'list-component',
@@ -14,21 +15,11 @@ import { AppState } from '../../state/app.state';
 export class ListComponent {
   store: Store<AppState>;
   tasks$: Observable<Array<Task>>;
-  tabsfilter$: Observable<filterEnum>;
-
 
   constructor(store: Store<AppState>) {
     this.store = store;
     this.tasks$ = store.select('tasks');
-    this.tabsfilter$ = store.select('tabsfilter');
   }
-
-  // taskfilter(tasks: Array<Task>): Array<Task> {
-  //   let arr = tasks.filter((task) => {
-  //       return (this.currentTabId === 0 || task.status === this.currentTabId);
-  //   });
-  //   return arr;
-  // }
 
   changeStatus(task: Task){
     this.store.dispatch(toggleItem({
