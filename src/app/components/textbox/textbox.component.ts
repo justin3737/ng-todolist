@@ -8,14 +8,14 @@ import { Component, Output, EventEmitter } from "@angular/core";
 
 export class TextBoxComponent {
   value: string = ''
-  @Output() addTodo = new EventEmitter<string>();
+  @Output() addTask= new EventEmitter<string>();
 
   constructor() {}
 
   onAddTodo(): void {
     if (!this.value.length) return;
 
-    this.addTodo.emit(this.value);
+    this.addTask.emit(this.value);
     this.value = '';
   }
 }

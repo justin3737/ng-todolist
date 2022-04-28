@@ -1,8 +1,5 @@
-import { Component,  Input } from '@angular/core';
+import { Component,  Input, Output, EventEmitter } from '@angular/core';
 import { Task, TaskStatus } from '../../state/task.model'
-import { Store } from '@ngrx/store';
-import { removeItem, toggleItem, clearDoneItems } from '../../state/task.action';
-import { AppState } from '../../state/app.state';
 
 @Component({
   selector: 'list-component',
@@ -11,28 +8,25 @@ import { AppState } from '../../state/app.state';
 })
 
 export class ListComponent {
-  store: Store<AppState>;
   TaskStatus = TaskStatus;
   @Input() tasks:any = [];
   @Input() filteredTasks:any = [];
+  @Output() removeTask = new EventEmitter<Task>();
+  @Output() clearAll = new EventEmitter<void>();
+  @Output() toggleTask = new EventEmitter<Task>();
 
-  constructor(store: Store<AppState>) {
-    this.store = store;
+  constructor() {}
+
+  onRemoveTask(task: Task): void {
+    this.removeTask.emit(task);
   }
 
-  changeStatus(task: Task){
-    this.store.dispatch(toggleItem({
-      id: task.id
-    }));
+  onToggle(task: Task): void {
+    this.toggleTask.emit(task);
   }
 
-  removeTask(task: Task){
-    this.store.dispatch(removeItem({
-      id: task.id
-    }));
+  onClear(): void {
+    this.clearAll.emit();
   }
 
-  clearDoneItems(){
-    this.store.dispatch(clearDoneItems());
-  }
 }

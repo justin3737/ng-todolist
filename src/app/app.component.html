@@ -3,7 +3,7 @@
 </div>
 <div class="h-[520px] mx-auto w-[500px] xs:w-[90%]">
   <textbox-component
-    (addTodo)="addTodo($event)">
+    (addTask)="addTask($event)">
   </textbox-component>
   <div class="w-full h-fll mt-[20px]">
     <div *ngIf="(tasks$| async)?.length === 0">
@@ -16,6 +16,9 @@
         [tabsfilter]="(tabsfilter$| async)">
       </tabs-component>
       <list-component
+        (removeTask)="removeTask($event)"
+        (toggleTask)="toggleTask($event)"
+        (clearAll)="onClear()"
         [tasks]="(tasks$| async)"
         [filteredTasks]="(filteredTasks$ | async)">
       </list-component>

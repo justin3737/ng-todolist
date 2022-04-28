@@ -1,12 +1,12 @@
 <div class="li-task-container">
   <ul>
     <li *ngFor="let task of filteredTasks"class="li-task">
-      <div class="task-status status-{{TaskStatus[task.status]}}" (click)="changeStatus(task)">
+      <div class="task-status status-{{TaskStatus[task.status]}}" (click)="onToggle(task)">
         <i class="checkbox-empty"></i>
         <i class="checkbox-mark"></i>
         <span class="title-style">{{task.title}}</span>
       </div>
-      <button class="remove-task" (click)="removeTask(task)">
+      <button class="remove-task" (click)="onRemoveTask(task)">
         <img src="../assets/icon_x.png" alt="" class="m-auto">
       </button>
     </li>
@@ -14,7 +14,7 @@
   <div class="li-counts">
     <div class="count-todo">共有 {{ tasks.length }} 個項目</div>
     <div class="clear-finished">
-      <button (click)="clearDoneItems()">清除已完成項目</button>
+      <button (click)="onClear()">清除已完成項目</button>
     </div>
   </div>
 </div>
