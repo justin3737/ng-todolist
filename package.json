@@ -1,6 +1,7 @@
 {
   "name": "ng-todolist",
   "version": "0.0.0",
+  "homepage": "https://justin3737.github.io/ng-todolist",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
