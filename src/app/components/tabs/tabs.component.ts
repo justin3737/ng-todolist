@@ -1,8 +1,5 @@
-import { Component, Input } from "@angular/core";
-import { changeFilter } from "../../state/tabsfilter.action";
-import { Store } from '@ngrx/store';
+import { Component, Input, Output, EventEmitter, } from "@angular/core";
 import  { filterEnum } from '../../state/task.model';
-import { AppState } from '../../state/app.state';
 
 
 @Component({
@@ -13,14 +10,12 @@ import { AppState } from '../../state/app.state';
 
 export class TabsComponent {
   filterEnum = filterEnum;
-  store: Store<AppState>;
   @Input() tabsfilter:any = [];
+  @Output() filter = new EventEmitter<filterEnum>();
 
-  constructor(store: Store<AppState>) {
-    this.store = store;
-  }
+  constructor() {}
 
   onFilter(filter: filterEnum) {
-    this.store.dispatch(changeFilter({filter}));
+    this.filter.emit(filter);
   }
 }

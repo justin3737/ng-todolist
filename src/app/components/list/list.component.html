@@ -1,6 +1,6 @@
 <div class="li-task-container">
   <ul>
-    <li *ngFor="let task of tasks"class="li-task">
+    <li *ngFor="let task of filteredTasks"class="li-task">
       <div class="task-status status-{{TaskStatus[task.status]}}" (click)="changeStatus(task)">
         <i class="checkbox-empty"></i>
         <i class="checkbox-mark"></i>
@@ -12,7 +12,7 @@
     </li>
   </ul>
   <div class="li-counts">
-    <div class="count-todo">{{ tasks.length }} 個待完成項目</div>
+    <div class="count-todo">共有 {{ tasks.length }} 個項目</div>
     <div class="clear-finished">
       <button (click)="clearDoneItems()">清除已完成項目</button>
     </div>

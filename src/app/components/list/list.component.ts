@@ -14,6 +14,7 @@ export class ListComponent {
   store: Store<AppState>;
   TaskStatus = TaskStatus;
   @Input() tasks:any = [];
+  @Input() filteredTasks:any = [];
 
   constructor(store: Store<AppState>) {
     this.store = store;
