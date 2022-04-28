@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { changeFilter } from "../../state/tabsfilter.action";
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import  { filterEnum } from '../../state/data-types';
+import  { filterEnum } from '../../state/task.model';
 import { AppState } from '../../state/app.state';
 
 

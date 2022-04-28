@@ -1,5 +1,5 @@
 import { Component,  Input } from '@angular/core';
-import { Task, filterEnum } from '../../state/data-types';
+import { Task, filterEnum } from '../../state/task.model'
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { removeItem, toggleItem, clearDoneItems } from '../../state/task.action';

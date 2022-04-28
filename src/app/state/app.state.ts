@@ -1,4 +1,4 @@
-import { Task, filterEnum }  from "./data-types";
+import { Task, filterEnum } from "./task.model";
 
 export interface AppState {
   tasks: Array<Task>;
