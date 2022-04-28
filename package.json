@@ -2,12 +2,15 @@
   "name": "ng-todolist",
   "version": "0.0.0",
   "homepage": "https://justin3737.github.io/ng-todolist",
+  "main": "index.html",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "clean": "rimraf dist",
+    "deploy": "npm run build && gh-pages -d dist/ng-todolist"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
     "@ngrx/store": "^13.1.0",
+    "gh-pages": "^3.2.3",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
