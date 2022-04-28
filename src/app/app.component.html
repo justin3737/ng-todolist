@@ -9,8 +9,8 @@
       <img class="block mx-auto pb-[30px]" src="../assets/bg_empty.png">
     </div>
     <div *ngIf="(tasks$| async)?.length !== 0" class="bg-white shadow-lg rounded-md">
-      <tabs-component></tabs-component>
-      <list-component></list-component>
+      <tabs-component [tabsfilter]="(tabsfilter$| async)"></tabs-component>
+      <list-component [tasks]="(tasks$| async)"></list-component>
     </div>
   </div>
 </div>

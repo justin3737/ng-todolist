@@ -1,8 +1,6 @@
 import { Component } from "@angular/core";
-import { Task } from "../../state/task.model";
 import { addItem } from '../../state/task.action';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
 import { AppState } from '../../state/app.state';
 
 @Component({
@@ -12,13 +10,11 @@ import { AppState } from '../../state/app.state';
 })
 
 export class TextBoxComponent {
-  tasks$: Observable<Array<Task>>;
   value: string = ''
   store: Store<AppState>;
 
   constructor(store: Store<AppState>) {
     this.store = store;
-    this.tasks$ = store.select('tasks');
   }
 
   addItem(){

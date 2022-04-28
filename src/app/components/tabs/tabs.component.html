@@ -1,10 +1,10 @@
 <div class="flex">
   <div class="tabs">
-    <button class="tabs-button" [ngClass]="((tabsfilter$ | async) === filterEnum.SHOW_ALL)?'active':''" (click)="onFilter(filterEnum.SHOW_ALL)">全部</button>
+    <button class="tabs-button" [ngClass]="(tabsfilter === filterEnum.SHOW_ALL)?'active':''" (click)="onFilter(filterEnum.SHOW_ALL)">全部</button>
   </div>
   <div class="tabs">
-    <button class="tabs-button" [ngClass]="((tabsfilter$ | async) === filterEnum.SHOW_ACTIVE)?'active':''" (click)="onFilter(filterEnum.SHOW_ACTIVE)">待完成</button>
+    <button class="tabs-button" [ngClass]="(tabsfilter === filterEnum.SHOW_ACTIVE)?'active':''" (click)="onFilter(filterEnum.SHOW_ACTIVE)">待完成</button>
   </div>
   <div class="tabs">
-    <button class="tabs-button" [ngClass]="((tabsfilter$ | async) === filterEnum.SHOW_DONE)?'active':''" (click)="onFilter(filterEnum.SHOW_DONE)">已完成</button>
+    <button class="tabs-button" [ngClass]="(tabsfilter === filterEnum.SHOW_DONE)?'active':''" (click)="onFilter(filterEnum.SHOW_DONE)">已完成</button>
   </div>

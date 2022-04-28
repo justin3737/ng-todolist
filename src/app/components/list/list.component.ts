@@ -1,10 +1,8 @@
 import { Component,  Input } from '@angular/core';
-import { Task, filterEnum } from '../../state/task.model'
+import { Task, TaskStatus } from '../../state/task.model'
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
 import { removeItem, toggleItem, clearDoneItems } from '../../state/task.action';
 import { AppState } from '../../state/app.state';
-import { selectTabFilter } from '../../state/task.selector';
 
 @Component({
   selector: 'list-component',
@@ -14,11 +12,11 @@ import { selectTabFilter } from '../../state/task.selector';
 
 export class ListComponent {
   store: Store<AppState>;
-  tasks$: Observable<Array<Task>>;
+  TaskStatus = TaskStatus;
+  @Input() tasks:any = [];
 
   constructor(store: Store<AppState>) {
     this.store = store;
-    this.tasks$ = store.select('tasks');
   }
 
   changeStatus(task: Task){
